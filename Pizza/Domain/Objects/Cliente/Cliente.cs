@@ -14,9 +14,13 @@ public sealed class Cliente : AggregateRoot{
     {
     }
     public ClienteId id {get; private set; }
+    
 
     public string nombre {get; private set;} = string.Empty;
 
     public int dni {get; private set;}
-
+    public static Cliente UpdateCliente(Guid id, string nombre, int dni)
+    {
+        return new Cliente(new ClienteId(id), nombre, dni);
+    }
 }

@@ -13,13 +13,8 @@ public class ClienteRepository : IClienteRepository
     }
     public void Add(Cliente cliente)=> _context.clientes.Add(cliente);
     public void Delete(Cliente cliente)=> _context.clientes.Remove(cliente);
-    public Task<List<Cliente>> GetAll() 
-    {
-        throw new NotImplementedException();
-    }
-    public Task<Cliente?> GetById(ClienteId id)
-    {
-        throw new NotImplementedException();
-    }
+     public async Task<bool> ExistsAsync(ClienteId id) => await _context.clientes.AnyAsync(customer => customer.id == id);
+    public async Task<List<Cliente>> GetAll() => await _context.clientes.ToListAsync();
+    public async Task<Cliente?> GetById(ClienteId id) => await _context.clientes.SingleOrDefaultAsync(c => c.id == id);
     public void Update(Cliente cliente)=> _context.clientes.Update(cliente);
 }
