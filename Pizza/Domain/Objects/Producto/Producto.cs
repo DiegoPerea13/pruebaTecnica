@@ -24,5 +24,8 @@ public sealed class Producto : AggregateRoot
     public double precio { get; private set; }
 
     public string descripcion { get; private set; } = string.Empty;
-
+    public static Producto UpdateProducto(Guid id, string nombre, double precio, string descripcion)
+    {
+        return new Producto(new ProductoId(id), nombre, precio, descripcion);
+    }
 }

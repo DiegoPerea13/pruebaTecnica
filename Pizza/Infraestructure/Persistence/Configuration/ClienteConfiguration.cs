@@ -1,10 +1,9 @@
 using Domain.Objects.Cliente;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
 namespace Infraestructure.Persistence.Configuration;
 
-public class ClienteConfiguuration : IEntityTypeConfiguration<Cliente>
+public class ClienteConfiguration : IEntityTypeConfiguration<Cliente>
 {
     public void Configure(EntityTypeBuilder<Cliente> builder)
     {
@@ -12,7 +11,7 @@ public class ClienteConfiguuration : IEntityTypeConfiguration<Cliente>
         builder.HasKey(c => c.id);
 
         builder.Property(c => c.id).HasConversion(
-            clienteId => clienteId.Value,    
+            clienteId => clienteId.Value,
             value => new ClienteId(value)
         );
 

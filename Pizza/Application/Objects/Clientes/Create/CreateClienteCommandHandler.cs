@@ -9,10 +9,10 @@ internal sealed class CreateClienteCommandHandler : IRequestHandler<CreateClient
 {
     private readonly IClienteRepository _clienteRepository;
     private readonly IUnitOfWork _unitOfWork;
-        public CreateClienteCommandHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
+    public CreateClienteCommandHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
     {
         _clienteRepository = clienteRepository ?? throw new ArgumentNullException(nameof(clienteRepository));
-        _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));;
+        _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
     }
     public async Task<ErrorOr<Unit>> Handle(CreateClienteCommand command, CancellationToken cancellationToken)
     {
