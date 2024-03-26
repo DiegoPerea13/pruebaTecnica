@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "BgaqtQGLb0enpR/uG3z/Fo6q9HGO6BzgYK49CZfB6W7YBXI9aX3PaFiY2QpO1SiFvvqEhQ1PJZQecGs7b2ONvA==",
+  "success": true,
+  "projectFilePath": "d:\\Estudio\\pruebaTecnica\\Pizza\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USUARIO\\.nuget\\packages\\erroror\\1.10.0\\erroror.1.10.0.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
