@@ -1,7 +1,7 @@
 namespace Domain.Objects.Cliente;
 
-public interface IClienteRepository{
-
+public interface IClienteRepository
+{
     Task<List<Cliente>> GetAll();
     Task<Cliente?> GetById(ClienteId id);
     void Add(Cliente cliente);
