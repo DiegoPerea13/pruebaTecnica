@@ -43,10 +43,10 @@ public class Productos : ApiController
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
     {
-        var clienteResult = await _mediator.Send(new GetProductoById(id));
+        var productoResult = await _mediator.Send(new GetProductoById(id));
 
-        return clienteResult.Match(
-            customer => Ok(customer),
+        return productoResult.Match(
+            producto => Ok(producto),
             errors => Problem(errors)
         );
     }
@@ -76,7 +76,7 @@ public class Productos : ApiController
         var updateResult = await _mediator.Send(command);
 
         return updateResult.Match(
-            customerId => NoContent(),
+            productoId => NoContent(),
             errors => Problem(errors)
         );
     }

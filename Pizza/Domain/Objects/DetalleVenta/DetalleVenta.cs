@@ -32,4 +32,8 @@ public sealed class DetalleVenta : AggregateRoot
     public double precioUnitario { get; private set; }
 
     public double total { get; private set; }
+    public static DetalleVenta UpdateDetalleVenta(Guid id, Guid productoId, Guid ventaId, int cantidad, double precioUnitario, double total)
+    {
+        return new DetalleVenta(new DetalleVentaId(id), new ProductoId(productoId), new VentaId(ventaId), cantidad, precioUnitario, total);
+    }
 }

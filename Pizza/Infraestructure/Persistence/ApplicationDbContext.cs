@@ -20,8 +20,8 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
 
     public DbSet<Cliente> clientes { get; set; }
     public DbSet<Producto> productos {get; set; }
-    //public DbSet<Venta> ventas {get; set; }
-    //public DbSet<DetalleVenta> detalleVentas {get; set; }
+    public DbSet<Venta> ventas {get; set; }
+    public DbSet<DetalleVenta> detalleVentas {get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
