@@ -10,7 +10,7 @@ public interface IApplicationDbContext
 {
     DbSet<Cliente> clientes { get; set; }
     DbSet<Producto> productos { get; set; }
-    //DbSet<Venta> ventas { get; set; }
-    //DbSet<DetalleVenta> detalleVentas { get; set; }
+    DbSet<Venta> ventas { get; set; }
+    DbSet<DetalleVenta> detalleVentas { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

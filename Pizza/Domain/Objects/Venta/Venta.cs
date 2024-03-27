@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Domain.Objects.Cliente;
 using Domain.Primitives;
 
@@ -16,7 +17,6 @@ public sealed class Venta : AggregateRoot
     public Venta()
     {
     }
-
     public VentaId id { get; private set; }
 
     public ClienteId clienteId { get; private set; }
@@ -25,5 +25,8 @@ public sealed class Venta : AggregateRoot
 
     public double total { get; private set; }
 
-
+    public static Venta UpdateVenta(Guid id, Guid clienteID, string fecha, double total)
+    {
+        return new Venta(new VentaId(id), new ClienteId(clienteID), fecha, total);
+    }
 }

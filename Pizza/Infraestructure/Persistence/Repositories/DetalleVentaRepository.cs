@@ -1,19 +1,18 @@
 using Domain.Objects.DetalleVenta;
 using Domain.Objects.Venta;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infraestructure.Persistence.Repositories;
 
 public class DetalleVentaRepository : IDetalleVentaRepository
 {
-    public void Add(DetalleVenta detalleVenta)
+    private readonly ApplicationDbContext _context;
+    public DetalleVentaRepository(ApplicationDbContext context)
     {
-        throw new NotImplementedException();
+        _context = context?? throw new ArgumentNullException(nameof(context));
     }
-
-    public void Delete(DetalleVenta detalleVenta)
-    {
-        throw new NotImplementedException();
-    }
+    public void Add(DetalleVenta detalleVenta) => _context.detalleVentas.Add(detalleVenta);
+    public void Delete(DetalleVenta detalleVenta) => _context.detalleVentas.Remove(detalleVenta);
 
     public Task<List<DetalleVenta>> GetById(VentaId ventaId, DetalleVentaId id)
     {
@@ -25,8 +24,7 @@ public class DetalleVentaRepository : IDetalleVentaRepository
         throw new NotImplementedException();
     }
 
-    public void Update(DetalleVenta detalleVenta)
-    {
-        throw new NotImplementedException();
-    }
+    //public async Task<List<DetalleVenta>> GetByVentaId(VentaId id) => await _context.detalleVentas.SingleOrDefaultAsync(dv => dv.id == id);
+    //public async Task<List<DetalleVenta>> GetById(VentaId ventaId, DetalleVentaId id)=> await _context.detalleVentas.SingleOrDefaultAsync(dv => dv.id == id);
+    public void Update(DetalleVenta detalleVenta)=> _context.detalleVentas.Update(detalleVenta);
 }
